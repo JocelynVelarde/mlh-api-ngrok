@@ -12,7 +12,7 @@ ngrok_link = st.text_input("Paste your ngrok link", placeholder="https://9790-18
 st.write("Click on the button to fetch ultrasonic data")
 if st.button("Fetch Data"):
     try:
-        response = requests.get(f"{ngrok_link}/data")
+        response = requests.get(f"{ngrok_link}/sensor")
         if response.status_code == 200:
             data = response.json()
             st.write("Ultrasonic Sensor Data:")
